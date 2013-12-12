@@ -1,6 +1,6 @@
 var _ = require('underscore');
 
-mongodb:@paulo.mongohq.com:10054/app20227552
+// mongodb:@paulo.mongohq.com:10054/app20227552 
 
 module.exports = _.extend(
     require(__dirname + '/../config/env/all.js'),
