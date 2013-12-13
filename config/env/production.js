@@ -1,5 +1,5 @@
 module.exports = {
-    db: "mongodb://@paulo.mongohq.com:10054/app20227552",
+    db: "mongodb://cybenex:9c3a29f1b0d51bc05970cc55246d6c49@paulo.mongohq.com:10054/app20227552",
     app: {
         name: "Photo Party"
     },
