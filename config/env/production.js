@@ -1,5 +1,5 @@
 module.exports = {
-    db: "mongodb://heroku:md131141@paulo.mongohq.com:10054/app20227552",
+    db: "mongodb://heroku:to1a11yS1ck@paulo.mongohq.com:10054/app20227552",
     app: {
         name: "Photo Party"
     },
