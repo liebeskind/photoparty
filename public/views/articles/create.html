@@ -7,9 +7,27 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label" for="content">Content</label>
+			<label class="control-label" for="title">Date</label>
 			<div class="controls">
-				<textarea data-ng-model="content" id="content" cols="30" rows="10" placeholder="Content"></textarea>
+				<input type="text" data-ng-model="date" id="date" placeholder="Date" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="title">Time</label>
+			<div class="controls">
+				<input type="text" data-ng-model="time" id="time" placeholder="Time" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="title">Itmes to Bring</label>
+			<div class="controls">
+				<input type="text" data-ng-model="items" id="items" placeholder="Items, separated by commas" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="content">Description</label>
+			<div class="controls">
+				<textarea data-ng-model="content" id="content" cols="30" rows="10" placeholder="Description"></textarea>
 			</div>
 		</div>
 		<div class="control-group">

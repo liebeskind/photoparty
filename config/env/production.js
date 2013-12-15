@@ -4,9 +4,9 @@ module.exports = {
         name: "Photo Party"
     },
     facebook: {
-        clientID: "APP_ID",
-        clientSecret: "APP_SECRET",
-        callbackURL: "http://localhost:3000/auth/facebook/callback"
+        clientID: "568587663233762",
+        clientSecret: "f7e6f683dde28051d0e8db87d0b01f54",
+        callbackURL: "http://photoparty.herokuapp.com/"
     },
     twitter: {
         clientID: "CONSUMER_KEY",

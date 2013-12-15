@@ -9,7 +9,7 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
         "link": "articles/create"
     },{
         "title": "My Past Events",
-        "link": "articles"
+        "link": "articles/past"
     }];
     
     $scope.isCollapsed = false;
