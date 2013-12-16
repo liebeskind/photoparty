@@ -81,6 +81,18 @@ module.exports = function(passport) {
         }
     ));
 
+    // passport.use(new FacebookStrategy({
+    //     clientID: FACEBOOK_APP_ID,
+    //     clientSecret: FACEBOOK_APP_SECRET,
+    //     callbackURL: "http://localhost:3000/auth/facebook/callback"
+    //   },
+    //   function(accessToken, refreshToken, profile, done) {
+    //     User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+    //       return done(err, user);
+    //     });
+    //   }
+    // ));
+
     //Use facebook strategy
     passport.use(new FacebookStrategy({
             clientID: config.facebook.clientID,
@@ -88,27 +100,8 @@ module.exports = function(passport) {
             callbackURL: config.facebook.callbackURL
         },
         function(accessToken, refreshToken, profile, done) {
-            User.findOne({
-                'facebook.id': profile.id
-            }, function(err, user) {
-                if (err) {
-                    return done(err);
-                }
-                if (!user) {
-                    user = new User({
-                        name: profile.displayName,
-                        email: profile.emails[0].value,
-                        username: profile.username,
-                        provider: 'facebook',
-                        facebook: profile._json
-                    });
-                    user.save(function(err) {
-                        if (err) console.log(err);
-                        return done(err, user);
-                    });
-                } else {
-                    return done(err, user);
-                }
+        User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+          return done(err, user);
             });
         }
     ));
