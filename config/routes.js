@@ -25,6 +25,16 @@ module.exports = function(app, passport, auth) {
         failureRedirect: '/signin'
     }), users.authCallback);
 
+    //Setting the instagram oauth routes
+    app.get('/auth/instagram', passport.authenticate('instagram', {
+        scope: ['email', 'user_about_me'],
+        failureRedirect: '/signin'
+    }), users.signin);
+
+    app.get('/auth/instagram/callback', passport.authenticate('instagram', {
+        failureRedirect: '/signin'
+    }), users.authCallback);
+
     //Setting the github oauth routes
     app.get('/auth/github', passport.authenticate('github', {
         failureRedirect: '/signin'
