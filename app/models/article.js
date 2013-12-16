@@ -19,6 +19,20 @@ var ArticleSchema = new Schema({
         default: '',
         trim: true
     },
+    date: {
+        type: Date,
+        default: ''
+    },
+    time: {
+        type: String,
+        default: '',
+        trim: true
+    },
+    items: {
+        type: String,
+        default: '',
+        trim: true
+    },
     content: {
         type: String,
         default: '',
