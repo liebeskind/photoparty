@@ -4,6 +4,7 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$ro
     $scope.create = function() {
         var article = new Articles({
             title: this.title,
+            hashtag: this.title.join(" "),
             content: this.content
         });
         article.$save(function(response) {

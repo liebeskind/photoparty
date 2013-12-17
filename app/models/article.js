@@ -19,6 +19,11 @@ var ArticleSchema = new Schema({
         default: '',
         trim: true
     },
+    hashtag: {
+        type: String,
+        default: '',
+        trim: true
+    },
     date: {
         type: Date,
         default: ''
