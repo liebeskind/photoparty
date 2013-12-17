@@ -26,7 +26,6 @@ module.exports = function(app, passport, auth) {
 
     //Setting the instagram oauth routes
     app.get('/auth/instagram', passport.authenticate('instagram', {
-        scope: ['email', 'user_about_me'],
         failureRedirect: '/signin'
     }), users.signin);
 
