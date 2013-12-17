@@ -5,10 +5,8 @@
 			<!-- <span>{{article.user.name}}</span> -->
 			<h2><a data-ng-href="#!/articles/{{article._id}}">{{article.title}}</a></h2>
 			<div>{{article.content}}</div>
-				<iframe id="iframecode" onload="" scrolling="yes" frameborder="0" width="256" src="http://instaembedder.com/gallery.php?username=&amp;hashtag={{article.title}}&amp;width=100&amp;cols=2&amp;frame=1&amp;image_border=10&amp;rows=1&amp;cell_margin=10&amp;display_username=0&amp;likes=0&amp;comments=0&amp;date=0&amp;link=0&amp;caption=0&amp;color=gray" style="height: 233px;"></iframe>
-				<iframe width="256" src = "https://api.instagram.com/v1/media/popular"></iframe>
-				<iframe width="256" src = "http://statigr.am/viewer.php#/tag/brownwedding/"></iframe>
-				
+				<iframe id="instimg-iframe" src="http://imageagram.com/slide.php?q=h&search=tag:{{article.title}}&wt=sl&s=125&h=3&w=3&b=no&c=&p=5&ho=fadeIn&sh=no" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:136px; height: 136px" ></iframe>
+
 
 		</li>
 	</ul>
