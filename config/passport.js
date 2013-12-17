@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
     LocalStrategy = require('passport-local').Strategy,
     TwitterStrategy = require('passport-twitter').Strategy,
     FacebookStrategy = require('passport-facebook').Strategy,
-    InstagramStrategy = require('passport-instagram').OAuth2Strategy,
+    InstagramStrategy = require('passport-instagram').Strategy,
     GitHubStrategy = require('passport-github').Strategy,
     GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
     User = mongoose.model('User'),
@@ -81,18 +81,6 @@ module.exports = function(passport) {
         }
     ));
 
-    // passport.use(new FacebookStrategy({
-    //     clientID: FACEBOOK_APP_ID,
-    //     clientSecret: FACEBOOK_APP_SECRET,
-    //     callbackURL: "http://localhost:3000/auth/facebook/callback"
-    //   },
-    //   function(accessToken, refreshToken, profile, done) {
-    //     User.findOrCreate({ facebookId: profile.id }, function (err, user) {
-    //       return done(err, user);
-    //     });
-    //   }
-    // ));
-
     //Use facebook strategy
     passport.use(new FacebookStrategy({
             clientID: config.facebook.clientID,
@@ -137,19 +125,6 @@ module.exports = function(passport) {
             }, function(err, user) {
                 if (err) {
                     return done(err);
-                }
-                if (!user) {
-                    user = new User({
-                        name: profile.displayName,
-                        email: profile.emails[0].value,
-                        username: profile.username,
-                        provider: 'instagram',
-                        instagram: profile._json
-                    });
-                    user.save(function(err) {
-                        if (err) console.log(err);
-                        return done(err, user);
-                    });
                 } else {
                     return done(err, user);
                 }
