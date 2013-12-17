@@ -127,7 +127,12 @@ module.exports = function(passport) {
                     return done(err);
                 }
                 if (!user) {
-                    user = new User();
+                    user = new User({
+                        name: profile.displayName,
+                        email: profile.emails[0].value,
+                        username: profile.username,
+                        provider: 'instagram',
+                    });
                     user.save(function(err) {
                         if (err) console.log(err);
                         return done(err, user);
