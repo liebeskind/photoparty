@@ -26,7 +26,7 @@ var ArticleSchema = new Schema({
     },
     date: {
         type: Date,
-        default: ''
+        default: Date.now
     },
     time: {
         type: String,
