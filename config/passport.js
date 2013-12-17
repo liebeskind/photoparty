@@ -125,6 +125,13 @@ module.exports = function(passport) {
             }, function(err, user) {
                 if (err) {
                     return done(err);
+                }
+                if (!user) {
+                    user = new User();
+                    user.save(function(err) {
+                        if (err) console.log(err);
+                        return done(err, user);
+                    });
                 } else {
                     return done(err, user);
                 }
