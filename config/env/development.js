@@ -11,7 +11,7 @@ module.exports = {
     instagram: {
         clientID: "01d4cb393147483b9bf0e46171581f34",
         clientSecret: "79ce1ef121c445d2942126812021c8c5",
-        callbackURL: "http://photoparty.herokuapp.com/auth/instagram/callback"
+        callbackURL: "http://localhost:3000/auth/instagram/callback"
     },
     twitter: {
         clientID: "CONSUMER_KEY",
