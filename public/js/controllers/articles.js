@@ -4,7 +4,9 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$ro
     $scope.create = function() {
         var article = new Articles({
             title: this.title,
-            hashtag: this.title.join(" "),
+            date: this.date,
+            time: this.time,
+            items: this.items,
             content: this.content
         });
         article.$save(function(response) {
@@ -12,8 +14,8 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$ro
         });
 
         this.title = "";
-        this.content = "";
-        console.log(article.hashtag);
+        this.date = "";
+        this.content = "";  
     };
 
     $scope.remove = function(article) {
