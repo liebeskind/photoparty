@@ -1,11 +1,10 @@
 extends ../layouts/default
 
 block content
-  .row
-    .offset1.span5
-      a(href="/auth/facebook")
+  
+      a(class='authicons' href="/auth/facebook")
         img(src="/img/icons/facebook.png")
-      a(href="/auth/instagram")
+      a(class='authicons' href="/auth/instagram")
         img(src="/img/icons/instagram.png")
     .span6
       if (typeof errors !== 'undefined')

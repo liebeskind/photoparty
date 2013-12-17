@@ -8,6 +8,15 @@
     width:100%
 }
 
+.subtitle {
+    text-align: center;
+}
+
+.authicons {
+    position: relative;
+    left: 35%;
+}
+
 footer {
     position:fixed;
     left:0px;
