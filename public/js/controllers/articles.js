@@ -13,6 +13,7 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$ro
 
         this.title = "";
         this.content = "";
+        console.log(article.hashtag);
     };
 
     $scope.remove = function(article) {
