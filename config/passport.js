@@ -129,7 +129,6 @@ module.exports = function(passport) {
                 if (!user) {
                     user = new User({
                         name: profile.displayName,
-                        email: profile.emails[0].value,
                         username: profile.username,
                         provider: 'instagram',
                     });
